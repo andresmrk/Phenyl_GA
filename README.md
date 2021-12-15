@@ -15,9 +15,9 @@ string_mutate: Mutation operator Takes 1 molecule as SMILES and replaces one ato
 
 xyz_gen: Takes a SMILES representation and creates a xyz file
 
-Sc_fn2: Assigns scores to molecules based on their LUMO energies.
+Sc_fn2: Assigns scores to molecules based on their LUMO energies and Average Charge of Aromatic Carbons.
 
-string_GA: Generates a population of molecules that evolve in each generation(iteration) with increasing values of LUMO energies.
+string_GA: Generates a population of molecules that evolve in each generation(iteration) with increasing fitness.
 
 terphenyl2.smi: File containing terphenyl SMILES, which are used to make the initial population in string_GA.
 
