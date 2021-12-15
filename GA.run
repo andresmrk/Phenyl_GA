@@ -1,0 +1,18 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=20
+#SBATCH --mem=0
+#SBATCH --time=240:00:00
+#SBATCH --output=String_GA.out
+#SBATCH --partition=sharada
+
+module purge
+module load gcc/8.3.0
+module load qchem-openmp
+module load anaconda3
+eval "$(conda shell.bash hook)"
+conda activate GA1
+
+cd ${SLURM_SUBMIT_DIR}
+python3 string_GA.py
+cp -R "$TMPDIR" "$SLURM_SUBMIT_DIR"
