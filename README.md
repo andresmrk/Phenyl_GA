@@ -1,5 +1,5 @@
 # Phenyl_GA
-This code is a genetic algorithm to generate terphenyl derivatives which uses a screening function based on LUMO values of the molecules.
+This code is a genetic algorithm to generate terphenyl derivative molecules which uses a screening function based on LUMO values, and the average charge of aromatic carbons, of the molecules.
 
 Prerequisites:
 
