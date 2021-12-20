@@ -9,6 +9,25 @@ from rdkit import rdBase
 
 rdBase.DisableLog('rdApp.error')
 
+# Checks if the molecule is legitimate:
+def string_OK(string):
+    mol = string2mol(string)
+    #print(mol)
+    if not mol:
+        return False
+    try:
+        Chem.SanitizeMol(mol)
+        test_mol = Chem.MolFromSmiles(Chem.MolToSmiles(mol))
+        if test_mol == None:
+            return None
+        target_size = size_stdev * np.random.randn() + average_size  # parameters set in GA_mol
+        print(mol.GetNumAtoms + " -- " + target_size)
+        if mol.GetNumAtoms() > 5 and mol.GetNumAtoms() < target_size:
+            return True
+        else:
+            return False
+    except:
+        return False
 
 def list2string(list):
     string = ''.join(list)
